@@ -1,0 +1,49 @@
+    <!-- the parts i need for drawing -->
+      <img src="i/fv/banana.png" class="parts" data-rgb="255,255,0">
+      <img src="i/fv/banana2.png" class="parts" data-rgb="204,204,0">
+      <img src="i/fv/erdbeere.png" class="parts" >
+      <img src="i/fv/erdbeere2.png" class="parts" >
+      <img src="i/fv/kiwi.png" class="parts" >
+      <img src="i/fv/kiwi2.png" class="parts" >
+      <img src="i/fv/lime.png" class="parts" >
+      <img src="i/fv/orange.png" class="parts" >
+      <img src="i/fv/orange2.png" class="parts" >
+      <img src="i/fv/lemon.png" class="parts" >
+      <img src="i/fv/lemon2.png" class="parts" >
+      <img src="i/fv/garlic.png" class="parts" >
+      <img src="i/fv/garlic2.png" class="parts" >
+      <img src="i/fv/onion.png" class="parts" >
+      <img src="i/fv/onion2.png" class="parts" >
+      <img src="i/fv/onion3.png" class="parts" >
+      <img src="i/fv/zucchini.png" class="parts" >
+      <img src="i/fv/zucchini2.png" class="parts" >
+      <img src="i/fv/white-zucchini.png" class="parts" >
+      <img src="i/fv/apple.png" class="parts"  >
+      <img src="i/fv/apple2.png" class="parts" >
+      <img src="i/fv/apple3.png" class="parts" >
+      <img src="i/fv/aubergine.png" class="parts" >
+      <img src="i/fv/aubergine1.png" class="parts" data-rgb="245,244,249">
+      <img src="i/fv/coconut.png" class="parts" >
+    <!-- end  parts we need for drawing -->
+      <img src="i/logo/veganblatt-logo.png" id="veganblatt_logo" width="300px" height="300px">
+    <!-- -->
+    <img src="i/test/test.jpg" alt="test image" id="testimage">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="js/bower_components/underscore/underscore.js"></script>
+    <script src="js/bower_components/raf.js/raf.js"></script>
+    <script src="js/lib/fe.js"></script>
+    <script src="js/veganizer2.js"></script>
+    <script>
+    before = function (c) { append(c); } 
+    step = function(c) { dappend(c); }
+    finish = function (c) { dappend(c); }
+    collectParts('.parts', function(parts)
+    {
+      FE.byImage($('#testimage').get(0), (
+        function(c) { 
+          drawWithPicsInsteadOfPixels(c, parts, 0.55, before, step, finish)
+        }
+      ))
+    });
+</script>
